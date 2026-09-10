@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ग्रामीण जन चेतना सेवा संस्थान | Gramin Jan Chetna Seva Sansthan (Reg. No. 1911/2011-2012)</title>
+  <meta name="description" content="ग्रामीण जन चेतना सेवा संस्थान (बस्ती, उ.प्र.) - निर्धन एवं वंचित बच्चों को निःशुल्क प्राथमिक शिक्षा तथा निःशुल्क शिक्षा किट (कॉपी, किताब, स्टेशनरी) प्रदान करने हेतु समर्पित गैर-सरकारी संगठन।">
+  <meta name="keywords" content="Gramin Jan Chetna Seva Sansthan, NGO Basti, Free Education India, Free Stationery Kit, Aarti Jaiswal Basti, Awas Vikas Colony Basti NGO">
+
+  <!-- Style & Fonts -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  <!-- QR Code Generator Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- Razorpay Payment Gateway -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================
+       Top Admin Active Notification Bar
+       ========================================== -->
+  <div class="admin-bar" id="adminBar">
+    <div class="admin-bar-inner">
+      <span data-i18n="adminBarText">🔑 आप प्रबंधक (Admin) रूप में लॉगिन हैं</span>
+      <div style="display: flex; gap: 10px;">
+        <button class="btn-admin-small" id="btnOpenAdminPanel" data-i18n="btnAdminPanel">⚡ एडमिन कंट्रोल पैनल</button>
+        <button class="btn-admin-logout" id="btnAdminLogout" data-i18n="btnLogout">लॉगआउट</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Official Top Registration Bar
+       ========================================== -->
+  <div class="reg-top-bar">
+    <div class="inner-bar">
+      <span data-i18n="regNotice">सोसाइटी रजिस्ट्रेशन अधिनियम 21 सन् 1860 के अधीन | पंजीकरण संख्या - 1911/2011-2012</span>
+      <span>📍 बस्ती सदर (उत्तर प्रदेश)</span>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Site Header & Navigation
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-logo-emblem">
+          <img src="assets/images/official_ngo_logo.jpg" alt="Gramin Jan Chetna Seva Sansthan Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <h1 data-i18n="ngoName">ग्रामीण जन चेतना सेवा संस्थान</h1>
+          <p data-i18n="ngoTagline">1614 आवास विकास कालोनी, तहसील - बस्ती सदर (उ.प्र.)</p>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <nav>
+          <ul class="main-nav" id="mainNav">
+            <li><a class="nav-link active" data-tab="home" data-i18n="navHome">मुख्य पृष्ठ</a></li>
+            <li><a class="nav-link" data-tab="updates" data-i18n="navUpdates">दैनिक गतिविधियां</a></li>
+            <li><a class="nav-link" data-tab="donations" data-i18n="navDonation">दान एवं सहयोग</a></li>
+            <li><a class="nav-link" data-tab="gallery" data-i18n="navGallery">गैलरी</a></li>
+            <li><a class="nav-link" data-tab="contact" data-i18n="navContact">संपर्क करें</a></li>
+          </ul>
+        </nav>
+
+        <!-- Bilingual Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="hi">हिन्दी</button>
+          <button class="lang-btn" data-lang="en">English</button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       TAB 1: HOME PAGE (मुख्य पृष्ठ)
+       ========================================== -->
+  <main id="home" class="page-tab active">
+    <!-- Hero Banner -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="badge" data-i18n="heroBadge">निःशुल्क शिक्षा और अध्ययन सामग्री वितरण अभियान</span>
+          <h2 data-i18n="heroTitle">हर गरीब बच्चे का अधिकार, शिक्षा और उज्ज्वल भविष्य</h2>
+          <p data-i18n="heroSubtitle">ग्रामीण जन चेतना सेवा संस्थान बस्ती (उ.प्र.) के जरूरतमंद एवं वंचित बच्चों को निःशुल्क प्राथमिक शिक्षा तथा निःशुल्क शिक्षण किट (किताबें, कॉपी, पेंसिल एवं स्टेशनरी) प्रदान करने के लिए प्रतिबद्ध है।</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary js-nav-trigger" data-tab="donations" data-i18n="heroBtnDonate">अपनी इच्छानुसार दान करें</button>
+            <button class="btn btn-outline js-nav-trigger" data-tab="updates" data-i18n="heroBtnLearn">हमारी गतिविधियों को देखें</button>
+          </div>
+        </div>
+        <div class="hero-media-wrapper">
+          <img src="assets/images/official_ngo_logo.jpg" alt="Gramin Jan Chetna Seva Sansthan Official Banner" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Identity & Banner Section -->
+    <div class="container identity-card-section">
+      <img src="assets/images/official_ngo_logo.jpg" alt="Gramin Jan Chetna Seva Sansthan Official Banner" class="official-banner-display">
+      
+      <div class="identity-card">
+        <div class="president-box">
+          <div class="president-avatar">
+            <img src="assets/images/official_ngo_logo.jpg" alt="आरती जायसवाल" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="president-name" data-i18n="presidentName">आरती जायसवाल</div>
+          <div class="president-role" data-i18n="presidentRole">अध्यक्ष / प्रबंधक</div>
+        </div>
+        <div class="identity-info">
+          <h3 style="font-size: 1.4rem; color: var(--primary-saffron); margin-bottom: 8px;" data-i18n="idCardTitle">संस्थान की अधिकृत जानकारी</h3>
+          <p style="font-weight: 700; color: var(--earth-green);" data-i18n="regAct">पंजीकृत: सोसाइटी रजिस्ट्रेशन अधिनियम 21, 1860</p>
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 10px;" data-i18n="regNo">पंजीकरण संख्या: 1911/2011-2012</p>
+          <p style="color: var(--text-muted);" data-i18n="addressShort">मुख्य कार्यालय: 1614 आवास विकास कालोनी, तहसील - बस्ती सदर (उत्तर प्रदेश)</p>
+          <div class="quote-box" data-i18n="presidentQuote">
+            "हमारा एकमात्र संकल्प है कि आर्थिक तंगी के कारण बस्ती जिले का कोई भी बच्चा शिक्षा के मौलिक अधिकार से वंचित न रहे।"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission & Pillars Section -->
+    <section class="container" style="margin-top: 50px;">
+      <div class="section-header">
+        <h2 data-i18n="missionTitle">हमारा मुख्य उद्देश्य एवं कार्य</h2>
+        <p data-i18n="missionSubtitle">हम बच्चों के उज्ज्वल भविष्य के लिए जमीनी स्तर पर निरंतर प्रयासरत हैं</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🏫</div>
+          <h3 data-i18n="pillar1Title">निःशुल्क प्राथमिक शिक्षा</h3>
+          <p data-i18n="pillar1Desc">आर्थिक रूप से कमजोर वर्ग के बच्चों के लिए निःशुल्क कोचिंग एवं साक्षरता कक्षाएं आयोजित करना।</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">✏️</div>
+          <h3 data-i18n="pillar2Title">निःशुल्क शिक्षा किट वितरण</h3>
+          <p data-i18n="pillar2Desc">हर जरूरतमंद बच्चे को कॉपी, किताबें, पेंसिल, रबर, कटर और स्कूल बैग उपलब्ध कराना।</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">📐</div>
+          <h3 data-i18n="pillar3Title">शैक्षणिक नींव मजबूत करना</h3>
+          <p data-i18n="pillar3Desc">बच्चों में पढ़ने, लिखने और गणित की बुनियादी समझ को निखारकर उनका आत्मविश्वास बढ़ाना।</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🤝</div>
+          <h3 data-i18n="pillar4Title">ग्रामीण बाल अधिकार एवं जागरूकता</h3>
+          <p data-i18n="pillar4Desc">अभिभावकों को बच्चों को स्कूल भेजने और बाल श्रम रोकने के लिए जागरूक करना।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats Banner -->
+    <div class="container">
+      <div class="stats-banner">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>100+</h3>
+            <p data-i18n="stat1Label">लाभान्वित बच्चे</p>
+          </div>
+          <div class="stat-item">
+            <h3>200+</h3>
+            <p data-i18n="stat2Label">बांटी गई शिक्षा किट</p>
+          </div>
+          <div class="stat-item">
+            <h3>5+</h3>
+            <p data-i18n="stat3Label">गांवों में अध्ययन केंद्र</p>
+          </div>
+          <div class="stat-item">
+            <h3>7+</h3>
+            <p data-i18n="stat4Label">समर्पित स्वयंसेवक</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       TAB 2: DAILY UPDATES PAGE (दैनिक गतिविधियां)
+       ========================================== -->
+  <main id="updates" class="page-tab">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="updatesTitle">दैनिक गतिविधियां एवं समाचार</h2>
+        <p data-i18n="updatesSubtitle">संस्थान द्वारा प्रतिदिन आयोजित की जा रही कक्षाओं और किट वितरण की ताजा जानकारी</p>
+      </div>
+
+      <div class="updates-controls">
+        <div class="filter-pills">
+          <button class="pill-btn active" data-filter="all" data-i18n="filterAll">सभी</button>
+          <button class="pill-btn" data-filter="kits" data-i18n="filterKits">किट वितरण</button>
+          <button class="pill-btn" data-filter="classes" data-i18n="filterClasses">निःशुल्क कक्षाएं</button>
+          <button class="pill-btn" data-filter="events" data-i18n="filterEvents">विशेष कार्यक्रम</button>
+        </div>
+      </div>
+
+      <div class="updates-feed" id="updatesFeed">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       TAB 3: DONATION PAGE (दान एवं सहयोग)
+       ========================================== -->
+  <main id="donations" class="page-tab">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="donateTitle">आपका छोटा सा योगदान, किसी बच्चे की जिंदगी बदल सकता है</h2>
+        <p data-i18n="donateSubtitle">आप अपनी इच्छानुसार कितना भी दान कर सकते हैं - ₹1 से लेकर ₹1,00,000 तक हर एक रुपया बच्चे की शिक्षा में सहायक है।</p>
+      </div>
+
+        <!-- Custom Amount Input + Razorpay + QR Generator -->
+        <div class="donation-calc-card">
+          <h3 data-i18n="calcTitle" style="font-size: 1.4rem; color: var(--primary-saffron); margin-bottom: 12px;">अपनी इच्छानुसार दान राशि दर्ज करें</h3>
+          
+          <div style="margin: 20px 0;">
+            <label data-i18n="customAmountLabel" style="display: block; font-weight: 700; color: var(--primary-saffron); font-size: 1.05rem; margin-bottom: 8px;">अपनी इच्छानुसार राशि लिखें (₹1 से ₹1,00,000 या अधिक)</label>
+            <div style="position: relative; display: flex; align-items: center; gap: 10px;">
+              <span style="position: absolute; left: 16px; font-weight: 800; font-size: 1.4rem; color: var(--primary-saffron);">₹</span>
+              <input type="number" id="customDonationInput" min="1" max="1000000" class="form-control" style="padding-left: 40px; font-size: 1.3rem; font-weight: 700; height: 54px; border: 2px solid var(--primary-saffron); border-radius: var(--radius-sm); flex: 1;" placeholder="उदा. 100, 500, 1000..." value="100">
+            </div>
+          </div>
+
+          <!-- Donor Name for Razorpay -->
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-weight: 700; color: var(--text-main); font-size: 0.95rem; margin-bottom: 6px;">आपका नाम (Your Name)</label>
+            <input type="text" id="donorNameInput" class="form-control" placeholder="जैसे: Ramesh Kumar" style="height: 44px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label style="display: block; font-weight: 700; color: var(--text-main); font-size: 0.95rem; margin-bottom: 6px;">मोबाइल नंबर (Mobile)</label>
+            <input type="tel" id="donorPhoneInput" class="form-control" placeholder="जैसे: 9876543210" style="height: 44px;">
+          </div>
+
+          <!-- PRIMARY: Razorpay Pay Now Button -->
+          <button id="btnRazorpayPay" class="btn btn-primary" style="width: 100%; font-size: 1.15rem; padding: 16px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #2E7D32, #388E3C); border-color: #2E7D32; box-shadow: 0 4px 15px rgba(46,125,50,0.35);">
+            💳 अभी दान करें — ऑटो पुष्टि (Pay Now)
+          </button>
+
+          <!-- Razorpay not set up notice (shown until key is added) -->
+          <div id="razorpaySetupNotice" style="background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; font-size: 0.85rem; color: #856404;">
+            ⚙️ <b>Admin:</b> Razorpay Key जोड़ने के लिए Admin Panel → Edit Payment पर जाएँ।
+          </div>
+
+          <div class="impact-preview-box" id="impactPreviewText" data-i18n="noLimitNotice">
+            💡 कोई न्यूनतम या अधिकतम सीमा नहीं - आपकी ₹1 की भी सहायता जरूरतमंद बच्चों की शिक्षा हेतु सीधे प्रयोग में लाई जाएगी!
+          </div>
+
+          <div style="background-color: var(--warm-bg); padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--cream-border); margin-top: 14px;">
+            <h4 data-i18n="whyDonateTitle" style="color: var(--earth-green); margin-bottom: 6px;">दान क्यों आवश्यक है?</h4>
+            <p data-i18n="whyDonateText" style="font-size: 0.95rem; color: var(--text-muted);">ग्रामीण क्षेत्रों में कई परिवार इतने गरीब हैं कि वे अपने बच्चों के लिए कॉपी-पेंसिल तक नहीं खरीद पाते। संस्थान जनता के सहयोग से इन बच्चों तक नि:शुल्क पठन-पाठन सामग्री पहुंचाता है।</p>
+          </div>
+        </div>
+
+        <!-- Payment & Bank Details (Dynamic) -->
+        <div class="payment-details-card">
+          <h3 data-i18n="bankDetailsTitle" style="font-size: 1.3rem; color: var(--earth-green); margin-bottom: 12px;">बैंक खाते में सीधा स्थानांतरण (Bank Transfer)</h3>
+          
+          <table class="bank-table">
+            <tr>
+              <td data-i18n="bankName">बैंक का नाम:</td>
+              <td id="bankNameVal">State Bank of India (SBI)</td>
+            </tr>
+            <tr>
+              <td data-i18n="accHolder">खाताधारक:</td>
+              <td id="accHolderVal">Gramin Jan Chetna Seva Sansthan</td>
+            </tr>
+            <tr>
+              <td data-i18n="accNumber">खाता संख्या:</td>
+              <td id="accNumVal">398200100XXXX</td>
+            </tr>
+            <tr>
+              <td data-i18n="ifscCode">IFSC कोड:</td>
+              <td id="ifscVal">SBIN0000034</td>
+            </tr>
+            <tr>
+              <td data-i18n="branchName">शाखा:</td>
+              <td id="branchVal">Basti Main Branch (उत्तर प्रदेश)</td>
+            </tr>
+            <tr>
+              <td>UPI ID:</td>
+              <td id="upiIdVal">7376487596@upi</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="transparency-banner" data-i18n="transparencyNote">
+        🔒 पारदर्शिता गारंटी: आपके द्वारा दिया गया 100% दान केवल बच्चों की शिक्षा सामग्री खरीदने और उनकी पढ़ाई के लिए उपयोग किया जाता है।
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       TAB 4: GALLERY PAGE (फोटो एवं वीडियो गैलरी)
+       ========================================== -->
+  <main id="gallery" class="page-tab">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="galleryTitle">फोटो एवं वीडियो गैलरी</h2>
+        <p data-i18n="gallerySubtitle">बच्चों की मुस्कान, निःशुल्क कक्षाएं और गतिविधियों के फोटो एवं वीडियो</p>
+      </div>
+
+      <!-- Subtabs: Photos vs Videos -->
+      <div class="gallery-subtabs">
+        <button class="subtab-btn active" data-subtab="photos" data-i18n="tabPhotos">📷 तस्वीरें (Photos)</button>
+        <button class="subtab-btn" data-subtab="videos" data-i18n="tabVideos">🎥 वीडियो (Videos)</button>
+      </div>
+
+      <!-- Photos Grid -->
+      <div class="gallery-grid" id="photoGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Videos Grid -->
+      <div class="video-grid" id="videoGrid" style="display: none;">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       TAB 5: CONTACT PAGE (संपर्क करें)
+       ========================================== -->
+  <main id="contact" class="page-tab">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="contactTitle">हमसे संपर्क करें एवं जुड़ें</h2>
+        <p data-i18n="contactSubtitle">यदि आप स्वयंसेवक बनना चाहते हैं, दान देना चाहते हैं या कोई सवाल पूछना चाहते हैं, तो हमसे संपर्क करें।</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Office Info -->
+        <div class="contact-info-card">
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <div>
+              <h4 data-i18n="officeAddressLabel" style="font-size: 1.1rem; color: var(--primary-saffron);">मुख्य कार्यालय पता:</h4>
+              <p data-i18n="officeAddressValue" style="color: var(--text-main); font-weight: 600;">1614 आवास विकास कालोनी, तहसील - बस्ती सदर, जिला - बस्ती (उत्तर प्रदेश)</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4 data-i18n="phoneLabel" style="font-size: 1.1rem; color: var(--primary-saffron);">फोन / व्हाट्सएप:</h4>
+              <p><a href="tel:7376487596" style="font-size: 1.2rem; font-weight: 700; color: var(--earth-green);">+91 7376487596</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4 data-i18n="emailLabel" style="font-size: 1.1rem; color: var(--primary-saffron);">ईमेल आईडी:</h4>
+              <p><a href="mailto:grameenjanchetnasewasansthan@gmail.com" style="font-weight: 600;">grameenjanchetnasewasansthan@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div style="background-color: var(--cream-card); padding: 18px; border-radius: var(--radius-sm); border-left: 4px solid var(--primary-saffron); margin-top: 20px;">
+            <p style="font-weight: 700; color: var(--primary-saffron);">अध्यक्ष / प्रबंधक:</p>
+            <p style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">श्रीमती आरती जायसवाल</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">ग्रामीण जन चेतना सेवा संस्थान, बस्ती</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h3 data-i18n="formTitle" style="font-size: 1.3rem; color: var(--primary-saffron); margin-bottom: 16px;">संदेश भेजें / स्वयंसेवक बनें</h3>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label data-i18n="formName">आपका पूरा नाम *</label>
+              <input type="text" class="form-control" required placeholder="उदा. राम कुमार">
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="formPhone">आपका फोन नंबर *</label>
+              <input type="tel" class="form-control" required placeholder="उदा. 9876543210">
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="formEmail">आपकी ईमेल (वैकल्पिक)</label>
+              <input type="email" class="form-control" placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="formInterest">आप किस रूप में जुड़ना चाहते हैं?</label>
+              <select class="form-control">
+                <option data-i18n="optDonate">अपनी इच्छानुसार दान करना चाहता/चाहती हूँ</option>
+                <option data-i18n="optVolunteer">निःशुल्क पढ़ने हेतु स्वयंसेवक</option>
+                <option data-i18n="optGeneral">सामान्य पूछताछ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="formMessage">आपका संदेश / सुझाव *</label>
+              <textarea class="form-control" rows="4" required placeholder="अपना संदेश लिखें..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btnSubmitForm">संदेश भेजें</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       MODAL 1: Admin Login Modal
+       ========================================== -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal-content" style="max-width: 420px;">
+      <button class="modal-close" id="btnCloseAdminLogin">✕</button>
+      <h3 data-i18n="adminLoginTitle" style="font-size: 1.4rem; color: var(--primary-saffron); margin-bottom: 16px; text-align: center;">🔑 प्रबंधक लॉगिन (Admin Login)</h3>
+      
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label data-i18n="adminUserLabel">प्रबंधक यूजर आईडी (Admin ID)</label>
+          <input type="text" id="adminUser" class="form-control" required placeholder="User ID">
+        </div>
+        
+        <div class="form-group">
+          <label data-i18n="adminPassLabel">पासवर्ड (Password)</label>
+          <input type="password" id="adminPass" class="form-control" required placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;" data-i18n="btnLogin">लॉगइन करें (Log In)</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: Admin Control Panel Dashboard
+       ========================================== -->
+  <div class="modal-overlay" id="adminPanelModal">
+    <div class="modal-content" style="max-width: 600px;">
+      <button class="modal-close" id="btnCloseAdminPanel">✕</button>
+      <h3 style="font-size: 1.4rem; color: var(--primary-saffron); margin-bottom: 16px;">⚡ प्रबंधक कंट्रोल पैनल (Admin Control Center)</h3>
+
+      <div class="admin-panel-nav">
+        <button class="admin-panel-btn active" data-pane="paneNews" data-i18n="adminTabNews">📰 नई खबर</button>
+        <button class="admin-panel-btn" data-pane="panePhoto" data-i18n="adminTabPhoto">📷 फोटो जोड़ें</button>
+        <button class="admin-panel-btn" data-pane="paneVideo" data-i18n="adminTabVideo">🎥 वीडियो जोड़ें</button>
+        <button class="admin-panel-btn" data-pane="panePayment" data-i18n="adminTabPayment">💳 बैंक व UPI विवरण बदलें</button>
+      </div>
+
+      <!-- Pane 1: Add News -->
+      <div class="admin-form-pane active" id="paneNews">
+        <form id="addUpdateForm">
+          <div class="form-group">
+            <label>खबर का शीर्षक *</label>
+            <input type="text" id="upTitle" class="form-control" required placeholder="उदा. बस्ती में 100 बच्चों को पुस्तकें वितरित">
+          </div>
+          
+          <div class="form-group">
+            <label>श्रेणी *</label>
+            <select id="upCategory" class="form-control">
+              <option value="kits">किट वितरण (Kit Distribution)</option>
+              <option value="classes">निःशुल्क कक्षाएं (Free Classes)</option>
+              <option value="events">विशेष कार्यक्रम (Special Events)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>स्थान *</label>
+            <input type="text" id="upLocation" class="form-control" required placeholder="उदा. बस्ती सदर">
+          </div>
+
+          <div class="form-group">
+            <label>फोटो यूआरएल / पाथ (Photo URL / Optional)</label>
+            <input type="text" id="upImg" class="form-control" placeholder="assets/images/official_ngo_logo.jpg या लिंक">
+          </div>
+
+          <div class="form-group">
+            <label>विवरण / पूरा समाचार *</label>
+            <textarea id="upDesc" class="form-control" rows="4" required placeholder="खबर का विवरण लिखें..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">प्रकाशित करें (Publish News)</button>
+        </form>
+      </div>
+
+      <!-- Pane 2: Add Photo to Gallery -->
+      <div class="admin-form-pane" id="panePhoto">
+        <form id="addPhotoForm">
+          <div class="form-group">
+            <label data-i18n="photoUrlLabel">फोटो यूआरएल या इमेज लिंक *</label>
+            <input type="text" id="photoUrl" class="form-control" required placeholder="https://example.com/photo.jpg या assets/images/photo.jpg">
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="captionLabel">फोटो विवरण / कैप्शन *</label>
+            <input type="text" id="photoCaption" class="form-control" required placeholder="उदा. निःशुल्क क्लास - बस्ती ग्रामीण क्षेत्र">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btnPublishPhoto">फोटो गैलरी में प्रकाशित करें</button>
+        </form>
+      </div>
+
+      <!-- Pane 3: Add Video to Gallery -->
+      <div class="admin-form-pane" id="paneVideo">
+        <form id="addVideoForm">
+          <div class="form-group">
+            <label data-i18n="videoUrlLabel">यूट्यूब / रील्स / MP4 वीडियो लिंक *</label>
+            <input type="text" id="videoUrl" class="form-control" required placeholder="https://www.youtube.com/watch?v=VIDEO_ID या shorts लिंक">
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="captionLabel">वीडियो शीर्षक / विवरण *</label>
+            <input type="text" id="videoCaption" class="form-control" required placeholder="उदा. बस्ती बच्चों के शिक्षण कार्यक्रम का वीडियो">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btnPublishVideo">वीडियो गैलरी में प्रकाशित करें</button>
+        </form>
+      </div>
+
+      <!-- Pane 4: Edit Payment Info -->
+      <div class="admin-form-pane" id="panePayment">
+        <form id="editPaymentForm">
+          <div class="form-group">
+            <label>बैंक का नाम (Bank Name)</label>
+            <input type="text" id="editBankName" class="form-control" required placeholder="State Bank of India (SBI)">
+          </div>
+
+          <div class="form-group">
+            <label>खाताधारक का नाम (Account Holder Name)</label>
+            <input type="text" id="editAccHolder" class="form-control" required placeholder="Gramin Jan Chetna Seva Sansthan">
+          </div>
+
+          <div class="form-group">
+            <label>खाता संख्या (Account Number)</label>
+            <input type="text" id="editAccNum" class="form-control" required placeholder="398200100XXXX">
+          </div>
+
+          <div class="form-group">
+            <label>IFSC कोड (IFSC Code)</label>
+            <input type="text" id="editIfsc" class="form-control" required placeholder="SBIN0000034">
+          </div>
+
+          <div class="form-group">
+            <label>शाखा (Branch)</label>
+            <input type="text" id="editBranch" class="form-control" required placeholder="Basti Main Branch (उ.प्र.)">
+          </div>
+
+          <div class="form-group">
+            <label>UPI ID (यूपीआई आईडी)</label>
+            <input type="text" id="editUpiId" class="form-control" required placeholder="7376487596@upi">
+          </div>
+
+          <div class="form-group">
+            <label>UPI QR कोड फोटो/लिंक (QR Image Link - Optional)</label>
+            <input type="text" id="editQrImg" class="form-control" placeholder="इमेज यूआरएल या पाथ (यदि कोई हो)">
+          </div>
+
+          <div class="form-group" style="background: #e8f5e9; border: 2px solid #4CAF50; border-radius: 8px; padding: 14px; margin-top: 8px;">
+            <label style="color: #2E7D32; font-weight: 800;">🔑 Razorpay API Key (ऑटो पेमेंट पुष्टि के लिए)</label>
+            <input type="text" id="editRazorpayKey" class="form-control" placeholder="rzp_live_XXXXXXXXXXXX" style="margin-top: 8px; font-family: monospace;">
+            <small style="color: #388E3C; display: block; margin-top: 6px;">📌 Razorpay Dashboard → Settings → API Keys → Generate Key से प्राप्त करें</small>
+            <small style="color: #388E3C; display: block;">✅ Key सेव होते ही "Pay Now" बटन काम करने लगेगा और पेमेंट अपने आप verify होगी।</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 14px;" data-i18n="btnSavePaymentInfo">पेमेंट विवरण अपडेट करें (Save Payment Details)</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Site Footer
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 data-i18n="ngoName">ग्रामीण जन चेतना सेवा संस्थान</h3>
+        <p data-i18n="regNotice">सोसाइटी रजिस्ट्रेशन अधिनियम 21 सन् 1860 के अधीन पंजीकृत | संख्या: 1911/2011-2012</p>
+        <p>📍 1614 आवास विकास कालोनी, तहसील - बस्ती सदर (उत्तर प्रदेश)</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>मुख्य लिंक</h4>
+        <ul>
+          <li><a class="js-nav-trigger" data-tab="home" data-i18n="navHome">मुख्य पृष्ठ</a></li>
+          <li><a class="js-nav-trigger" data-tab="updates" data-i18n="navUpdates">दैनिक गतिविधियां</a></li>
+          <li><a class="js-nav-trigger" data-tab="donations" data-i18n="navDonation">दान एवं सहयोग</a></li>
+          <li><a class="js-nav-trigger" data-tab="gallery" data-i18n="navGallery">गैलरी</a></li>
+          <li><a class="js-nav-trigger" data-tab="contact" data-i18n="navContact">संपर्क करें</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>संपर्क सूत्र</h4>
+        <ul>
+          <li>📞 <a href="tel:7376487596">+91 7376487596</a></li>
+          <li>✉️ <a href="mailto:grameenjanchetnasewasansthan@gmail.com">Email Us</a></li>
+          <li>👩‍🏫 अध्यक्ष: आरती जायसवाल</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Gramin Jan Chetna Seva Sansthan (ग्रामीण जन चेतना सेवा संस्थान). All Rights Reserved.</p>
+      <button class="footer-admin-btn" id="btnFooterAdmin" data-i18n="adminPortalFooter">🔑 प्रबंधक पोर्टल (Admin Login)</button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/lang.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
